@@ -1,12 +1,8 @@
-h1{
-    //background-color: red;
-}
+
 
 
 #categorias-container{
-    margin-top: 40%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    
     a{
     margin: 10px 10px;
     padding: 60px 20px;
@@ -16,5 +12,30 @@ h1{
     color: white;
     background-size: cover;
     background-position: center;
+    margin-top: 100px;
 }
 }
+
+.slider{
+    aspect-ratio: 10/16;
+    width: 300px;
+    position: relative;
+    display: flex;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.slider img{
+    width: 100%;
+    left: 0;
+    position: sticky;
+    object-fit: cover;
+    border-radius: 5px;
+    scroll-snap-align: center;
+}
+
+
+

@@ -3,6 +3,8 @@ import { CATEGORIA } from 'src/app/core/interface/constants/cotagoria';
 import { Producto } from 'src/app/core/interface/productos';
 import {ActivatedRoute, Router} from '@angular/router';
 import { CarritoService } from 'src/app/core/services/carrito.service';
+import { GENERO } from 'src/app/core/interface/constants/genero';
+import { Genero } from 'src/app/core/interface/genero';
 
 @Component({
   selector: 'app-productos',
@@ -23,6 +25,16 @@ export class ProductosPage implements OnInit {
         }
       })
     })
+
+    activatedRoute.params.subscribe(params=>{
+      console.log(params)
+      GENERO.forEach(Genero=>{
+       const productoEncontrado = Genero.productos.find(producto=>producto.id == params['id']);
+        if(productoEncontrado){
+          this.producto=productoEncontrado
+        }
+      })
+    })
   }
 
   ngOnInit() {
@@ -31,7 +43,7 @@ export class ProductosPage implements OnInit {
     id: 0,
     nombre: '',
     precio: 0,
-    ingredients:[],
+    descripcion:'',
     imagen: ''
   }
 

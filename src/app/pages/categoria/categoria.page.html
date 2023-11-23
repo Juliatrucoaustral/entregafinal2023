@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>categoria</ion-title>
+   <ion-title> Categoria </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,18 +14,18 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngFor="let item of categoriaActual.productos" [routerLink]="['/productos',item.id]">
-    <img alt="{{item.nombre}}" src="{{item.imagen}}" />
-    <ion-card-header>
-      <ion-card-title>{{item.nombre}}</ion-card-title>
-      <ion-card-subtitle>${{item.precio}}</ion-card-subtitle>
-    </ion-card-header>
   
-    <ion-card-content>
-      {{item.ingredients}} 
-    </ion-card-content>
-  </ion-card>
   
+  <ion-row>
+    <ion-col size="6" *ngFor="let item of categoriaActual.productos">
+      <ion-card id="ion-card" [routerLink]="['/productos', item.id]">
+        <img alt="{{item.nombre}}" src="{{item.imagen}}" />
+        <ion-card-header>
+          <ion-card-title>{{item.nombre}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
 
 

@@ -15,8 +15,17 @@
   </ion-header>
 
 <img src="{{producto.imagen}}" alt="">
-  <p>{{producto.ingredients}}</p>
-  <p>${{producto.precio}}</p>
-  <app-contador-cantidad (cantidadCambiada)="cantidad=$event"></app-contador-cantidad>
+  <p>{{producto.descripcion}}</p>
+  <div class="contenedor-flex">
   <ion-button fill="outline" shape="round" expand="block" (click)="onAgregarAlCarritoClicked()">Agregar al carrito</ion-button>
+  <app-contador-cantidad (cantidadCambiada)="cantidad=$event"></app-contador-cantidad>
+</div>
 </ion-content>
+<ion-card>
+  <ion-card-header>
+    <div class="contenedor-flex">
+      <ion-icon aria-hidden="true" name="wallet-outline"></ion-icon> 
+      <ion-card-title>Total</ion-card-title>
+    </div>
+    <ion-card-subtitle>{{producto.precio}}</ion-card-subtitle>
+  </ion-card-header>

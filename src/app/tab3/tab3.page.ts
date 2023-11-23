@@ -15,5 +15,18 @@ export class Tab3Page {
       this.carritoService.modificarCantidadProducto(idProducto,cantidad);
     }
 
+    enviarSelected = false;
+    retiroSelected = false;
+  
+    seleccionarEnviar() {
+      this.enviarSelected = true;
+      this.retiroSelected = false;
+    }
+  
+    seleccionarRetiro() {
+      this.enviarSelected = false;
+      this.retiroSelected = true;
+    }
+
 }
 
